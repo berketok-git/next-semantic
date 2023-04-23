@@ -30,9 +30,6 @@ export default async function handler(request) {
         }).join("\n");
 
         // Validate length
-        if (query.length < 10 || query.length > 100) {
-            throw new Error('Search term out of range');
-        }
         if (textBody.length > 3000) {
             throw new Error('Received data length out of range');
         }

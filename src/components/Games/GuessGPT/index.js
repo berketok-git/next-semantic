@@ -9,7 +9,7 @@ import shuffleArray from '@/lib/shuffleArray';
 import { motion, AnimatePresence } from "framer-motion";
 import { Howl } from 'howler';
 import LinearProgress from '@mui/material/LinearProgress';
-import Turnstile from 'react-hook-turnstile';
+
 import Img from '@/components/UI/Img';
 
 const CORRECT_THRESHOLD = 0.91; // Cosine similarity threshold to be considered correct
@@ -153,12 +153,7 @@ export default function GuessGPT() {
             title: 'Submit your answer',
             input: 'text',
             html: <div className="flex [&>*]:mx-auto h-[65px]">
-                <Turnstile
-                    sitekey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
-                    onVerify={(token) => {
-                        setToken(token);
-                    }}
-                />
+                
             </div>,
             inputAttributes: {
                 autocapitalize: 'off'

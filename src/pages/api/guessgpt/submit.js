@@ -1,5 +1,4 @@
 import readRequestBody from "@/lib/api/readRequestBody";
-import checkTurnstileToken from "@/lib/api/checkTurnstileToken";
 import semanticSim from "@/lib/openAi/semanticSim";
 
 // Use Next.js edge runtime
@@ -12,10 +11,6 @@ export default async function handleRequest(request) {
     const OPENAI_COMPLETION_ENDPOINT = 'https://api.openai.com/v1/completions';
     const formData = await readRequestBody(request);
     try {
-        // Check CAPTCHA token
-        if (!await checkTurnstileToken(formData.token)) {
-            throw new Error('Captcha verification failed');
-        }
 
         // Check input
         if (formData.answer.length < 3 || formData.answer.length > 100) {

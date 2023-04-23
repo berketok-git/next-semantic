@@ -33,7 +33,7 @@ const openAiStream = async (system, prompt) => {
                 }
             ],
             max_tokens: 150,
-            temperature: 0.0,
+            temperature: 0.5,
             stream: true
         })
     });

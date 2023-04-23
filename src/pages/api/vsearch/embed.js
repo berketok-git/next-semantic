@@ -7,11 +7,9 @@
 
     @returns {Response} A response object containing a JSON array of matching text chunks.
 
-    @throws {Error} If captcha verification fails or search term length is out of range.
 */
 import { createClient } from "@supabase/supabase-js";
 import readRequestBody from "@/lib/api/readRequestBody";
-import checkTurnstileToken from "@/lib/api/checkTurnstileToken";
 import getEmbedding from "@/lib/openAi/getEmbedding";
 
 // Use Next.js edge runtime
@@ -26,15 +24,10 @@ export default async function handler(request) {
     try {
         const requestData = await readRequestBody(request);
 
-        // Validate CAPTCHA response
-        if (!await checkTurnstileToken(requestData.token)) {
-            throw new Error('Captcha verification failed');
-        }
+
 
         // Validate length
-        if (requestData.searchTerm.length < 10 || requestData.searchTerm.length > 100) {
-            throw new Error('Search term length out of range');
-        }
+  
 
         const embedding = await getEmbedding(requestData.searchTerm);
 
