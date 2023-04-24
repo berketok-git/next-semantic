@@ -1,10 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
 import Heading from '../UI/Heading'
 import ExtLink from '../UI/ExtLink'
 
 import portfolioItems from '@/data/portfolioItems'
-import { VscLinkExternal } from 'react-icons/vsc'
 
 const Category = ({ title, items }) => (
     <fieldset className="border-2 border-white/20 rounded-2xl h-[350px] w-full md:w-[300px] px-4 py-2 overflow-auto">

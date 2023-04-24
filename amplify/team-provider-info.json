@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-lawbot-staging-73223-authRole",
+      "UnauthRoleArn": "arn:aws:iam::826524497750:role/amplify-lawbot-staging-73223-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::826524497750:role/amplify-lawbot-staging-73223-authRole",
+      "Region": "eu-west-2",
+      "DeploymentBucketName": "amplify-lawbot-staging-73223-deployment",
+      "UnauthRoleName": "amplify-lawbot-staging-73223-unauthRole",
+      "StackName": "amplify-lawbot-staging-73223",
+      "StackId": "arn:aws:cloudformation:eu-west-2:826524497750:stack/amplify-lawbot-staging-73223/27be5e90-e272-11ed-b8da-0a1f03d7e8a8",
+      "AmplifyAppId": "duys9t1e9shh3"
+    },
+    "categories": {
+      "auth": {
+        "lawbot": {}
+      }
+    }
+  }
+}

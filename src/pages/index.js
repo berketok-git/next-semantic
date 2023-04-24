@@ -2,14 +2,18 @@
 import React from "react";
 import Layout from "@/components/Layout";
 import SemanticSearch from "@/components/Portfolio/SemanticSearch";
+import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function HomePage() {
   return (
-    <Layout
-      pageTitle="Semantic Search Example"
-      description="Proof of concept for GPT-powered semantic search"
-    >
-      <SemanticSearch />
-    </Layout>
+    <Authenticator variation="modal"       hideSignUp={true}>
+      {({ signOut, user }) => (
+        <Layout>
+          <h1>Hello, {user.username}!</h1>
+          <button onClick={signOut}>Sign out</button>
+          <SemanticSearch />
+        </Layout>
+      )}
+    </Authenticator>
   );
 }
