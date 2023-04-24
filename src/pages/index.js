@@ -6,7 +6,7 @@ import { Authenticator } from "@aws-amplify/ui-react";
 
 export default function HomePage() {
   return (
-    <Authenticator variation="modal"       hideSignUp={true}>
+    <Authenticator variation="modal" hideSignUp={false}>
       {({ signOut, user }) => (
         <Layout>
           <h1>Hello, {user.username}!</h1>
